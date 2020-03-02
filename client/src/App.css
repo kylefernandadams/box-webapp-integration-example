@@ -1,0 +1,22 @@
+.header {
+    z-index: 1;
+}
+
+.dialog-row {
+    overflow: hidden;
+    padding-top: 75px;
+}
+
+.dialog-column {
+    float: left;
+    margin: 25px;
+}
+
+.file-info-form {
+    /* padding-left: 20px; */
+}
+
+.salesforce-record-form {
+    padding-bottom: 100%;
+    margin-bottom: -100%;
+}

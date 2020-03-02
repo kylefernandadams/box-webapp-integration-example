@@ -1,0 +1,66 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "@hapi/address": "^2.0.0",
+    "axios": "^0.18.1",
+    "box-ui-elements": "^11.0.2",
+    "classnames": "^2.2.5",
+    "dotenv": "^8.2.0",
+    "draft-js": "^0.10.1",
+    "filesize": "^4.1.2",
+    "form-serialize": "^0.7.2",
+    "formik": "^2.1.4",
+    "ilib-tree-node": "^1.2.0",
+    "immutable": "^3.7.4",
+    "jsuri": "^1.3.1",
+    "lodash": "^4.17.5",
+    "message-accumulator": "^2.1.1",
+    "mousetrap": "^1.6.3",
+    "node-sass": "^4.13.1",
+    "pikaday": "^1.8.0",
+    "prop-types": "^15.7.2",
+    "query-string": "^6.11.0",
+    "react": "^16.9.0",
+    "react-animate-height": "^2.0.8",
+    "react-beautiful-dnd": "^9.0.2",
+    "react-dom": "^16.9.0",
+    "react-draggable": "^3.3.0",
+    "react-immutable-proptypes": "^2.1.0",
+    "react-intl": "^2.8.0",
+    "react-measure": "^2.3.0",
+    "react-modal": "^3.8.1",
+    "react-process-string": "^1.2.0",
+    "react-router": "^5.1.2",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "^3.4.0",
+    "react-simple-card": "^2.0.2",
+    "react-tether": "^1.0.0",
+    "react-textarea-autosize": "^7.1.0",
+    "react-virtualized": "^9.21.0",
+    "regenerator-runtime": "^0.13.2",
+    "scroll-into-view-if-needed": "^2.2.20",
+    "tabbable": "^1.1.2",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {},
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
