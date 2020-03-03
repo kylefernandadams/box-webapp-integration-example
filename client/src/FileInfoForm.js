@@ -10,6 +10,7 @@ import Button from 'box-ui-elements/es/components/button/Button';
 import axios from 'axios';
 
 const FileInfoForm = (fileProps) => {
+    const sfdcLightningBaseURL = 'https://my-devorg-dev-ed';
     let baseServerEndpoint;
     if(process.env.NODE_ENV === 'production') {
         baseServerEndpoint = 'https://server-example-dot-my-project-id.appspot.com';
@@ -64,7 +65,7 @@ const FileInfoForm = (fileProps) => {
                 <span>Successfully posted File to Salesforce</span>
                 <Button onClick={() => {
                     console.log('Click click click....');
-                    window.location = `https://dev1-massnerder-dev-ed.lightning.force.com/lightning/r/${recordInfo.object}/${recordInfo.recordId}/view`;
+                    window.location = `${sfdcLightningBaseURL}.lightning.force.com/lightning/r/${recordInfo.object}/${recordInfo.recordId}/view`;
                 }} >View Salesforce Record</Button>
             </Notification>
         );
