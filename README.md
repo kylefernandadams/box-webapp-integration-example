@@ -29,7 +29,10 @@ gcloud app deploy app.yaml
 cd ../client
 yarn install (or npm install)
 ```
-2. Update the baseServerEnpoint value in the [FileInfoForm.js](https://github.com/kylefernandadams/box-webapp-integration-example/blob/master/client/src/FileInfoForm.js#L13) and [SfdcRecordInfoForm.js](https://github.com/kylefernandadams/box-webapp-integration-example/blob/master/client/src/SfdcRecordInfoForm.js#L10) with the server-side endpoint deployed in the previous section.
+2. Update the following variable:
+* [sfdcLightningBaseURL](https://github.com/kylefernandadams/box-webapp-integration-example/blob/master/client/src/FileInfoForm.js#L13)
+* [baseServerEnpoint](https://github.com/kylefernandadams/box-webapp-integration-example/blob/master/client/src/FileInfoForm.js#L14) in FileInfo.js with the server-side endpoint deployed in the previous section.
+* [baseServerEnpoint](https://github.com/kylefernandadams/box-webapp-integration-example/blob/master/client/src/SfdcRecordInfoForm.js#L10) in SfdcRecordInfoForm.js with the server-side endpoint deployed in the previous section.
 3. Create a product build of the project.
 ```
 yarn build (or npm run build)
