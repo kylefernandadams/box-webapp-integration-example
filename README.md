@@ -30,7 +30,7 @@ cd ../client
 yarn install (or npm install)
 ```
 2. Update the following variable:
-* [sfdcLightningBaseURL](https://github.com/kylefernandadams/box-webapp-integration-example/blob/master/client/src/FileInfoForm.js#L13)
+* [sfdcLightningBaseURL](https://github.com/kylefernandadams/box-webapp-integration-example/blob/master/client/src/FileInfoForm.js#L13) with your Salesforce developer org's Lightning URL.
 * [baseServerEnpoint](https://github.com/kylefernandadams/box-webapp-integration-example/blob/master/client/src/FileInfoForm.js#L14) in FileInfo.js with the server-side endpoint deployed in the previous section.
 * [baseServerEnpoint](https://github.com/kylefernandadams/box-webapp-integration-example/blob/master/client/src/SfdcRecordInfoForm.js#L10) in SfdcRecordInfoForm.js with the server-side endpoint deployed in the previous section.
 3. Create a product build of the project.
