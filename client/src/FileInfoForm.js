@@ -4,7 +4,9 @@ import React, { useState, useEffect } from 'react';
 import Form from 'box-ui-elements/es/components/form-elements/form/Form'
 import TextInput from 'box-ui-elements/es/components/text-input/TextInput';
 import DatePicker from 'box-ui-elements/es/components/date-picker/DatePicker';
+import { Notification, NotificationsWrapper } from 'box-ui-elements/es/components/notification';
 import PrimaryButton from 'box-ui-elements/es/components/primary-button/PrimaryButton';
+import Button from 'box-ui-elements/es/components/button/Button';
 import axios from 'axios';
 
 const FileInfoForm = (fileProps) => {
@@ -21,6 +23,10 @@ const FileInfoForm = (fileProps) => {
         ownedBy: '',
         createdAt: '',
         sharedLink: ''
+    });
+    const [notification, setNotification] = useState({
+        id: 0,
+        instances: new Map()
     });
 
     const handleChange = () => {
@@ -39,12 +45,40 @@ const FileInfoForm = (fileProps) => {
                 Shared Link: ${fileInfo.sharedLink}`
         }
         axios.post(postFeedItemEndpoint, body)
-            .then(feedItem => {
-                console.log('Created feed item: ', JSON.stringify(feedItem, null, 2));
-            })
-            .catch(err => {
-                console.log('Failed to get file info: ', err);
-            });
+        .then(feedItem => {
+            console.log('Created feed item: ', JSON.stringify(feedItem, null, 2));
+            addNotification();
+        })
+        .catch(err => {
+            console.log('Failed to get file info: ', err);
+        });
+    }
+
+    const addNotification = () => {
+        console.log('Handling notifications...');
+        const recordInfo = fileProps.recordDetails;
+        const instance = (
+            <Notification key={0} type="info" duration={'short'} onClose={() => {
+                closeNotification(notification.id)
+            }} className="notification">
+                <span>Successfully posted File to Salesforce</span>
+                <Button onClick={() => {
+                    console.log('Click click click....');
+                    window.location = `https://dev1-massnerder-dev-ed.lightning.force.com/lightning/r/${recordInfo.object}/${recordInfo.recordId}/view`;
+                }} >View Salesforce Record</Button>
+            </Notification>
+        );
+        setNotification({
+            instances: notification.instances.set(0, instance),
+            id: notification.id
+        });
+    }
+
+    const closeNotification = id => {
+        const { instances } = notification;
+
+        instances.delete(id);
+        setNotification({instances});
     }
 
     useEffect(() => {
@@ -119,6 +153,7 @@ const FileInfoForm = (fileProps) => {
                     onChange={handleChange}
                     value={fileInfo.sharedLink}
                 />
+                <NotificationsWrapper className="notifications">{[...notification.instances.values()]}</NotificationsWrapper>
                 <PrimaryButton type="submit" className="file-link-submit">Share File to Salesforce</PrimaryButton>
             </Form>
         </div>
