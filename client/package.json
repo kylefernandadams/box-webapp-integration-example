@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@hapi/address": "^2.0.0",
-    "axios": "^0.18.1",
+    "axios": "^0.21.1",
     "box-ui-elements": "^11.0.2",
     "classnames": "^2.2.5",
     "dotenv": "^8.2.0",
