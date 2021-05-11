@@ -21,7 +21,7 @@
     "ilib-tree-node": "^1.2.0",
     "immutable": "^3.7.4",
     "jsuri": "^1.3.1",
-    "lodash": "^4.17.5",
+    "lodash": "^4.17.21",
     "message-accumulator": "^2.1.1",
     "mousetrap": "^1.6.3",
     "node-sass": "^4.13.1",
